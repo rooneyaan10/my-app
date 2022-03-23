@@ -1,15 +1,12 @@
 import './App.css';
-import Cover from './components/Cover';
 import Content from './components/Content';
-import Button from './components/Button';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Cover/>
+        <h1>Playlist</h1>
         <Content/>
-        <Button/>
       </header>
     </div>
   );

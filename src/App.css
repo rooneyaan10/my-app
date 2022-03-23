@@ -28,6 +28,22 @@
   color: #61dafb;
 }
 
+.album-cover {
+  width: 170px;
+}
+
+.playlist-item {
+  float: left;
+  padding: 30px;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 10px;
+  width: 70px;
+  height: 30px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
