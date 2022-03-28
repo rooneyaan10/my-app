@@ -1,10 +1,35 @@
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+.song-image {
+  width: 190px;
+}
+
+.playlist-container {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: #b8b6b6;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-bottom: 100px;
+  padding: 30px;
+}
+
+button {
+  cursor: pointer;
 }
 
 code {
