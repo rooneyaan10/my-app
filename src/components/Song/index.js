@@ -1,4 +1,4 @@
-const Song = ({ image, title, album }) => {
+const Song = ({ uri, image, title, album, selectState, isSelected }) => {
   return (
     <div className="playlist-container">
       <div className="playlist-item">
@@ -8,8 +8,13 @@ const Song = ({ image, title, album }) => {
           <p className="song-album">{album}</p>
         </div>
       </div>
-      <button className="playlist-action">
-        Select
+      <button
+        className="playlist-action"
+        onClick={() => {
+          selectState(uri);
+        }}
+      >
+        {isSelected ? "Deselect" : "Select"}
       </button>
     </div>
   );
