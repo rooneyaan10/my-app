@@ -12,6 +12,7 @@ const Playlist = ({ token, userId, songUris }) => {
     if (playlistID) {
       addSongToPlaylist(playlistID);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playlistID]);
 
   const handleForm = (e) => {
