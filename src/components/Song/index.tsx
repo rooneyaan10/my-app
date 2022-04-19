@@ -6,9 +6,15 @@ interface songInterface {
   title: string;
   album: string;
   artists: string;
-  duration: string;
+  duration: number;
   selectState: (uri: string) => void;
   isSelected: boolean;
+}
+
+const millisToMinutesAndSeconds = (millis: number) => {
+  var minutes = Math.floor(millis / 60000);
+  var seconds = Math.floor((millis % 60000) / 1000);
+  return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
 
 const Song = ({ uri, image, title, album, artists, duration, selectState, isSelected }: songInterface) => {
@@ -38,7 +44,7 @@ const Song = ({ uri, image, title, album, artists, duration, selectState, isSele
                 </Text>
                 <Text color="gray.400" textAlign="left">{album}</Text>
                 <Text color="gray.400" textAlign="left">{artists}</Text>
-                <Text color="gray.400" textAlign="left">{duration}</Text>
+                <Text color="gray.400" textAlign="left">{millisToMinutesAndSeconds(duration)}</Text>
               </Box>
             </Flex>
           </Box>

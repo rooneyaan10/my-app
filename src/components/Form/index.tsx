@@ -103,7 +103,7 @@ const Form = ({ songUris }: songUrisInterface) => {
                   />
                 </div>
                 <div>
-                  <Button size="md" type="button" colorScheme="green" mt="5">
+                  <Button size="md" type="submit" colorScheme="green" mt="5">
                     Create
                   </Button>
                 </div>
