@@ -37,12 +37,13 @@ const Song = ({ uri, image, title, album, artists, duration, selectState, isSele
                 alt="Album"
                 boxSize="100px"
                 borderRadius="md"
+                data-testid="song-image"
               />
               <Box ml="2">
-                <Text fontSize="lg" fontWeight="bold" textAlign="left">
+                <Text fontSize="lg" fontWeight="bold" textAlign="left" data-testid="song-title">
                   {title}
                 </Text>
-                <Text color="gray.400" textAlign="left">{album}</Text>
+                <Text color="gray.400" data-tesstid="song-album" textAlign="left">{album}</Text>
                 <Text color="gray.400" textAlign="left">{artists}</Text>
                 <Text color="gray.400" textAlign="left">{millisToMinutesAndSeconds(duration)}</Text>
               </Box>
@@ -54,6 +55,7 @@ const Song = ({ uri, image, title, album, artists, duration, selectState, isSele
             onClick={() => {
               selectState(uri);
             }}
+            data-testid="song-button"
           >
             {isSelected ? "Deselect" : "Select"}
           </Button>
