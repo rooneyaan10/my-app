@@ -1,7 +1,7 @@
 import { Box, Flex, Spacer, Text, Button } from "@chakra-ui/react";
 
 const Navbar = () => {
-  const REDIRECT_URI = "http://localhost:3000/";
+  const REDIRECT_URI = "https://spotify-gigih-kohl.vercel.app/";
 
   const handleLogout = () => {
     window.location.href = REDIRECT_URI;
