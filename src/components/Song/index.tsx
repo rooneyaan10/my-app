@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Button, Text, Spacer } from "@chakra-ui/react";
+import { Box, Flex, Image, Text, Spacer } from "@chakra-ui/react";
 
 interface songInterface {
   uri: string;
@@ -15,13 +15,22 @@ const millisToMinutesAndSeconds = (millis: number) => {
   var minutes = Math.floor(millis / 60000);
   var seconds = Math.floor((millis % 60000) / 1000);
   return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-}
+};
 
-const Song = ({ uri, image, title, album, artists, duration, selectState, isSelected }: songInterface) => {
+const Song = ({
+  uri,
+  image,
+  title,
+  album,
+  artists,
+  duration,
+  selectState,
+  isSelected,
+}: songInterface) => {
   return (
     <>
       <Box
-        bgColor="gray.700"
+        bgColor="#535353"
         borderRadius="md"
         p="2"
         mb="2"
@@ -40,25 +49,42 @@ const Song = ({ uri, image, title, album, artists, duration, selectState, isSele
                 data-testid="song-image"
               />
               <Box ml="2">
-                <Text fontSize="lg" fontWeight="bold" textAlign="left" data-testid="song-title">
+                <Text
+                  fontSize="lg"
+                  fontWeight="bold"
+                  textAlign="left"
+                  data-testid="song-title"
+                >
                   {title}
                 </Text>
-                <Text color="gray.400" data-tesstid="song-album" textAlign="left">{album}</Text>
-                <Text color="gray.400" textAlign="left">{artists}</Text>
-                <Text color="gray.400" textAlign="left">{millisToMinutesAndSeconds(duration)}</Text>
+                <Text color="white" data-tesstid="song-album" textAlign="left">
+                  {album}
+                </Text>
+                <Text color="white" textAlign="left">
+                  {artists}
+                </Text>
+                <Text color="white" textAlign="left">
+                  {millisToMinutesAndSeconds(duration)}
+                </Text>
               </Box>
             </Flex>
           </Box>
           <Spacer />
-          <Button
-            colorScheme="green"
+          <Box
+            as="button"
+            borderColor='#1db954'
+            fontWeight='semibold'
+            bg="#1db954"
+            h='10'
+            w='100'
+            color="black"
             onClick={() => {
               selectState(uri);
             }}
             data-testid="song-button"
           >
             {isSelected ? "Deselect" : "Select"}
-          </Button>
+          </Box>
         </Flex>
       </Box>
     </>

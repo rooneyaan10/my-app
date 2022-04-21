@@ -16,14 +16,19 @@ const Navbar = () => {
           </Text>
           <Spacer ml="auto" />
           <Flex alignItems="center" pl={3}>
-            <Button
-              colorScheme="green"
+            <Box as='button'
+              borderColor='#1db954'
+              fontWeight='semibold'
+              h='10'
+              type="button"
+              bg='#1db954'
+              color="black"
               onClick={() => {
                 handleLogout();
               }}
             >
               Logout
-            </Button>
+            </Box>
           </Flex>
         </Flex>
       </Box>

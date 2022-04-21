@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { retrieveUserId, createPlaylist, pushSongs } from "../../api/axios";
-import { InputGroup, Input, Button, Center, Box } from "@chakra-ui/react";
+import { InputGroup, Input, Center, Box } from "@chakra-ui/react";
 
 interface selectedInterface {
   uri: string;
@@ -72,7 +72,7 @@ const Form = ({ songUris }: songUrisInterface) => {
   return (
     <>
       <Center>
-        <Box w="auto">
+        <Box w="full">
           <form onSubmit={handleSubmit}>
             <div className="form-container">
               <div className="playlist-box">
@@ -82,7 +82,7 @@ const Form = ({ songUris }: songUrisInterface) => {
                     <Input
                       type="text"
                       className="form-title-input"
-                      placeholder="Title"
+                      placeholder="Playlist Name"
                       name="title"
                       variant="filled"
                       value={form.title}
@@ -95,7 +95,7 @@ const Form = ({ songUris }: songUrisInterface) => {
                   <Input
                     type="text"
                     className="form-desc-input"
-                    placeholder="Description"
+                    placeholder="Playlist Description"
                     name="description"
                     variant="filled"
                     value={form.description}
@@ -103,9 +103,19 @@ const Form = ({ songUris }: songUrisInterface) => {
                   />
                 </div>
                 <div>
-                  <Button size="md" type="submit" colorScheme="green" mt="5">
-                    Create
-                  </Button>
+                  <Box
+                    as="button"
+                    borderColor='#1db954'
+                    fontWeight='semibold'
+                    h='10'
+                    w='100%'
+                    type="submit"
+                    color="black"
+                    bg="#1db954"
+                    mt="5"
+                  >
+                    Create Playlist
+                  </Box>
                 </div>
               </div>
             </div>
