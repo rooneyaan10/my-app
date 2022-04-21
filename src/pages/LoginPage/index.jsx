@@ -22,7 +22,7 @@ const LoginPage = () => {
   return (
     <>
       <Center h="100px">
-        <Box p="3" bgColor="green.300" borderRadius="md">
+        <Box p="3" bgColor="#1db954" borderRadius="md">
               <Link href={url} color="black">
                 Login To Spotify
               </Link>
