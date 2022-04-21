@@ -1,4 +1,4 @@
-import { Box, Flex, Spacer, Text, Button } from "@chakra-ui/react";
+import { Box, Flex, Spacer, Text } from "@chakra-ui/react";
 
 const Navbar = () => {
   const REDIRECT_URI = "https://spotify-gigih-kohl.vercel.app/";
