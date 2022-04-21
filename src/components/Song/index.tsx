@@ -30,7 +30,7 @@ const Song = ({
   return (
     <>
       <Box
-        bgColor="#535353"
+        bgColor="#212121"
         borderRadius="md"
         p="2"
         mb="2"

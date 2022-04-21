@@ -1,6 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
-const dark = "#212121";
+const dark = "#121212";
 const light = "#f0f0f0";
 
 const config = {

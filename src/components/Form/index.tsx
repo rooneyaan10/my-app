@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { retrieveUserId, createPlaylist, pushSongs } from "../../api/axios";
-import { InputGroup, Input, Center, Box } from "@chakra-ui/react";
+import {
+  FormControl,
+  Input,
+  Center,
+  Box,
+  Text,
+} from "@chakra-ui/react";
 
 interface selectedInterface {
   uri: string;
@@ -71,54 +77,47 @@ const Form = ({ songUris }: songUrisInterface) => {
 
   return (
     <>
+      <Text mt='10' mb='auto' fontSize='50px'>Create a Playlist</Text>
+      <Text>Hint: Select your songs first</Text>
       <Center>
-        <Box w="full">
+        <Box w="50%" mt="10" mb="10">
           <form onSubmit={handleSubmit}>
-            <div className="form-container">
-              <div className="playlist-box">
-                <div className="form-title">
-                  <label htmlFor="title" className="form-title-text"></label>
-                  <InputGroup mb="5">
-                    <Input
-                      type="text"
-                      className="form-title-input"
-                      placeholder="Playlist Name"
-                      name="title"
-                      variant="filled"
-                      value={form.title}
-                      onChange={handleForm}
-                    />
-                  </InputGroup>
-                </div>
-                <div className="form-desc">
-                  <label htmlFor="title" className="form-desc-text"></label>
-                  <Input
-                    type="text"
-                    className="form-desc-input"
-                    placeholder="Playlist Description"
-                    name="description"
-                    variant="filled"
-                    value={form.description}
-                    onChange={handleForm}
-                  />
-                </div>
-                <div>
-                  <Box
-                    as="button"
-                    borderColor='#1db954'
-                    fontWeight='semibold'
-                    h='10'
-                    w='100%'
-                    type="submit"
-                    color="black"
-                    bg="#1db954"
-                    mt="5"
-                  >
-                    Create Playlist
-                  </Box>
-                </div>
-              </div>
-            </div>
+            <FormControl mb="5">
+                <Input
+                  type="text"
+                  className="form-title-input"
+                  placeholder="Playlist Name"
+                  name="title"
+                  variant="filled"
+                  value={form.title}
+                  onChange={handleForm}
+                />
+            </FormControl>
+            <FormControl>
+              <label htmlFor="title" className="form-desc-text"></label>
+              <Input
+                type="text"
+                className="form-desc-input"
+                placeholder="Playlist Description"
+                name="description"
+                variant="filled"
+                value={form.description}
+                onChange={handleForm}
+              />
+            </FormControl>
+            <Box
+              as="button"
+              borderColor="#1db954"
+              fontWeight="semibold"
+              h="10"
+              w="50%"
+              type="submit"
+              color="black"
+              bg="#1db954"
+              mt="5"
+            >
+              Create Playlist
+            </Box>
           </form>
         </Box>
       </Center>
