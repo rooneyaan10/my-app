@@ -5,7 +5,7 @@ const light = "#f0f0f0";
 
 const config = {
   initialColorMode: "light",
-  useSystemColorMode: true,
+  useSystemColorMode: false,
 };
 
 const theme = extendTheme({
