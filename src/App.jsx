@@ -8,26 +8,28 @@ import {
 import PlaylistPage from "./pages/PlaylistPage";
 import LoginPage from "./pages/LoginPage";
 import Navbar from "./components/Navbar";
+import { Box } from "@chakra-ui/react";
 
 function App() {
   const token = useSelector((state) => state.token.value);
 
   return (
-    <div>
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            {!token ? <LoginPage /> : <Redirect to="/create-playlist" />}
-          </Route>
-          <Route path="/create-playlist">
-            <Navbar />
-            <PlaylistPage />
-          </Route>
-          <Route path="*">
-          </Route>
-        </Switch>
-      </Router>
-    </div>
+    <>
+      <Box>
+        <Router>
+          {token ? <Navbar /> : ""}
+          <Switch>
+            <Route exact path="/">
+              {!token ? <LoginPage /> : <Redirect to="/create-playlist" />}
+            </Route>
+            <Route path="/create-playlist">
+              {!token ? <Redirect exact to="/" /> : <PlaylistPage />}
+            </Route>
+            <Route path="*"></Route>
+          </Switch>
+        </Router>
+      </Box>
+    </>
   );
 }
 
