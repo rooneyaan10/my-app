@@ -3,9 +3,8 @@ import { useSelector } from "react-redux";
 import Song from "../../components/Song";
 import Search from "../../components/Search";
 import { retrieveSongs } from "../../api/axios";
-import { Text, Button } from "@chakra-ui/react";
-
 import Form from "../../components/Form";
+import { SimpleGrid, Box } from "@chakra-ui/react";
 
 const PlaylistPage = () => {
   const token = useSelector((state) => state.token.value);
@@ -13,7 +12,6 @@ const PlaylistPage = () => {
   const [songData, setSongData] = useState([]);
   const [selectedSongs, setSelectedSongs] = useState([]);
   const [combineSongs, setCombineSongs] = useState([]);
-  const REDIRECT_URI = "http://localhost:3000/";
 
   useEffect(() => {
     const handleCombineTracks = songData.map((song) => ({
@@ -40,46 +38,31 @@ const PlaylistPage = () => {
       : setSelectedSongs([...selectedSongs, uri]);
   };
 
-  const handleLogout = ()=>{
-    window.location = REDIRECT_URI;
-}
-
   return (
-    <div>
-      <div className="playlist-header">
-        <Text fontSize="50px" fontWeight="bold" mb="7">
-          Spotify Playlist Creator
-        </Text>
-        <Button
-            colorScheme="green"
-            onClick={() => {
-              handleLogout();
-            }}
-          >Logout
-          </Button>
-      </div>
+    <>
       <Search getSong={getSong} setSearchSong={setSearchSong} />
       <Form songUris={selectedSongs} />
-
-      <div className="song-list">
-        {combineSongs.map((song) => {
-          const { uri, name, artists, album, duration_ms, isSelected } = song;
-          return (
-            <Song
-              key={uri}
-              uri={uri}
-              image={album.images[0]?.url}
-              title={name}
-              artists={artists[0]?.name}
-              album={album.name}
-              duration={duration_ms}
-              selectState={handleSelect}
-              isSelected={isSelected}
-            />
-          );
-        })}
-      </div>
-    </div>
+      <Box p="5">
+        <SimpleGrid columns={{ lg: 2 }} spacing="4" py="1">
+          {combineSongs.map((song) => {
+            const { uri, name, artists, album, duration_ms, isSelected } = song;
+            return (
+              <Song
+                key={uri}
+                uri={uri}
+                image={album.images[0]?.url}
+                title={name}
+                artists={artists[0]?.name}
+                album={album.name}
+                duration={duration_ms}
+                selectState={handleSelect}
+                isSelected={isSelected}
+              />
+            );
+          })}
+        </SimpleGrid>
+      </Box>
+    </>
   );
 };
 

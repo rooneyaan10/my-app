@@ -16,7 +16,7 @@ const Search = ({ setSearchSong, getSong }: searchInterface) => {
     <>
       <Center>
         <Box w="sm">
-          <InputGroup mb="3">
+          <InputGroup mt="10">
               <Input
                 type="search"
                 className="search-input"

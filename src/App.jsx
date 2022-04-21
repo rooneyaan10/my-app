@@ -7,18 +7,20 @@ import {
 } from "react-router-dom";
 import PlaylistPage from "./pages/PlaylistPage";
 import LoginPage from "./pages/LoginPage";
+import Navbar from "./components/Navbar";
 
 function App() {
   const token = useSelector((state) => state.token.value);
 
   return (
-    <div className="p-5 bg-neutral-900 h-screen space-y-5 overflow-auto">
+    <div>
       <Router>
         <Switch>
           <Route exact path="/">
             {!token ? <LoginPage /> : <Redirect to="/create-playlist" />}
           </Route>
           <Route path="/create-playlist">
+            <Navbar />
             <PlaylistPage />
           </Route>
           <Route path="*">

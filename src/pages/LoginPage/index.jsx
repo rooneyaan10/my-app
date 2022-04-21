@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setToken } from "../../reducer/slicer";
-import url from "../../spotipi/spotify";
+import url from "../../spotify/spotify";
 import { Center, Box, Link } from "@chakra-ui/react";
 
 const LoginPage = () => {
