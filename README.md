@@ -17,6 +17,8 @@ npm start
 ```
 
 ## Features
+- Integration with your Spotify® account.
 - Find songs, artists, or albums.
-- Create private playlist.
+- Create playlist.
 - Select specific song.
+- Show song data including title, artist, album, and duration
