@@ -21,11 +21,23 @@ const LoginPage = () => {
 
   return (
     <>
-      <Center h="100px">
-        <Box p="3" bgColor="#1db954" borderRadius="md">
-              <Link href={url} color="black">
-                Login To Spotify
-              </Link>
+      <Center h="100vh">
+        <Box
+          p="3"
+          bgColor="#1db954"
+          borderRadius="md"
+          transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
+          _hover={{ bg: "#1ed760" }}
+        >
+          <Link
+            href={url}
+            color="black"
+            style={{ textDecoration: "none" }}
+            fontWeight="semibold"
+            fontSize="20px"
+          >
+            Login To Spotify
+          </Link>
         </Box>
       </Center>
     </>

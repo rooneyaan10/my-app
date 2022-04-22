@@ -43,7 +43,7 @@ const PlaylistPage = () => {
       <Search getSong={getSong} setSearchSong={setSearchSong} />
       <Form songUris={selectedSongs} />
       <Box p="5">
-        <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} spacing="4" py="1">
+        <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} spacing="5" py="5">
           {combineSongs.map((song) => {
             const { uri, name, artists, album, duration_ms, isSelected } = song;
             return (

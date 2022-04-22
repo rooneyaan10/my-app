@@ -32,11 +32,6 @@ const Song = ({
       <Box
         bgColor="#212121"
         borderRadius="md"
-        p="2"
-        mb="2"
-        ml="10"
-        mr="10"
-        onClick={() => selectState(uri)}
       >
         <Flex align="center">
           <Box>
@@ -72,11 +67,14 @@ const Song = ({
           <Spacer />
           <Box
             as="button"
-            borderColor='#1db954'
-            fontWeight='semibold'
+            borderColor="#1db954"
+            fontWeight="semibold"
+            transition='all 0.2s cubic-bezier(.08,.52,.52,1)'
+            _hover={{ bg: '#1ed760' }}
             bg="#1db954"
-            h='10'
-            w='100'
+            h="10"
+            w="100"
+            mr="5"
             color="black"
             onClick={() => {
               selectState(uri);

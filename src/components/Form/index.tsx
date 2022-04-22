@@ -7,6 +7,7 @@ import {
   Center,
   Box,
   Text,
+  Textarea,
 } from "@chakra-ui/react";
 
 interface selectedInterface {
@@ -80,7 +81,7 @@ const Form = ({ songUris }: songUrisInterface) => {
       <Text mt='10' mb='auto' fontSize='50px'>Create a Playlist</Text>
       <Text>Hint: Select your songs first</Text>
       <Center>
-        <Box w="50%" mt="10" mb="10">
+        <Box mt="10" mb="10" w="350px">
           <form onSubmit={handleSubmit}>
             <FormControl mb="5">
                 <Input
@@ -95,9 +96,8 @@ const Form = ({ songUris }: songUrisInterface) => {
             </FormControl>
             <FormControl>
               <label htmlFor="title" className="form-desc-text"></label>
-              <Input
-                type="text"
-                className="form-desc-input"
+              <Textarea
+                id="description"
                 placeholder="Playlist Description"
                 name="description"
                 variant="filled"
@@ -109,6 +109,8 @@ const Form = ({ songUris }: songUrisInterface) => {
               as="button"
               borderColor="#1db954"
               fontWeight="semibold"
+              transition='all 0.2s cubic-bezier(.08,.52,.52,1)'
+              _hover={{ bg: '#1ed760' }}
               h="10"
               w="50%"
               type="submit"

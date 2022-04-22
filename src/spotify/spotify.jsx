@@ -4,7 +4,7 @@ var redirect_uri = process.env.REACT_APP_REDIRECT_URL;
 var state = "KMG2FE1205SHARHAN";
 
 localStorage.setItem("TOKEN", state);
-var scope = "playlist-modify-private user-read-private";
+var scope = "playlist-modify-private user-read-private user-top-read playlist-read-private";
 
 var url = "https://accounts.spotify.com/authorize";
 url += "?response_type=token";

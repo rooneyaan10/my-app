@@ -10,7 +10,7 @@ const Search = ({ setSearchSong, getSong }: searchInterface) => {
     <>
       <Center>
         <Box w="sm">
-          <InputGroup mt="10">
+          <InputGroup mt="100">
             <Input
               type="search"
               className="search-input"
@@ -23,6 +23,8 @@ const Search = ({ setSearchSong, getSong }: searchInterface) => {
               as="button"
               borderColor="#1db954"
               fontWeight="semibold"
+              transition='all 0.2s cubic-bezier(.08,.52,.52,1)'
+              _hover={{ bg: '#1ed760' }}
               h="10"
               type="button"
               bg="#1db954"
